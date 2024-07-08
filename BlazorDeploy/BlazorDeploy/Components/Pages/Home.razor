@@ -1,0 +1,20 @@
+﻿@page "/"
+@inject IConfiguration configuration
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<ul>
+    <li>
+        Default Connection: @configuration.GetConnectionString("Default")
+    </li>
+    <li>
+        Root Value: @(configuration.GetValue<string>("RootValue"))
+    </li>
+    <li>
+        Nested Value: @(configuration.GetValue<string>("Nested:NestedValue"))
+    </li>
+</ul>
